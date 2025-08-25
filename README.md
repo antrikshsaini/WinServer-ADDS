@@ -1,4 +1,7 @@
-### Hands-On with Windows Server 2022: Setting Up Active Directory Domain (ADDS), OUs, Groups, and Policies | VM Ware
+## Hands-On with Windows Server 2022: Setting Up Active Directory Domain (ADDS), OUs, Groups, and Policies | VM Ware
+
+### LinkedIn URL : https://bit.ly/41nKdAG
+### Medium Post URL : https://bit.ly/4mvXjnQ
 
 ### 🔹 Introduction
 
