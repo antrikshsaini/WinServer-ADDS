@@ -101,7 +101,7 @@ Click NEXT
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfzGUOaK6wicZtWc6TMweIY3tDAJnKaV2lOIifVrlnhy935_c3ZHMCNrd0bNdkigR6Qwu_effUyeX1vf79KxJSsoH4YjGK0b7-nnOz_WLhMQ9S7igJT-BjKIfKbl02H675h5MhlXg?key=W2xKHEZUw2tbSB0Cqnh7hQ)![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfbk9jdTAlP1k2WTdvHnqE63Z502aGdMRqHpwlbBf5hAH28iG92STH9wnKEYi9zzDmGpgZxd5s17SChk014tWK_MKvzg0or3tA3ZTT2RhdiChTS9tE--6CVLvVHPKztnlv8B7-7wA?key=W2xKHEZUw2tbSB0Cqnh7hQ)![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeKXhu0OU7IXqEAzTis5F096jzSnYM7j7cGMfYr3ijOL0RNlkOkJkYhmTTamhVNu_n6jnK2-zLrQCFVTmTx7Q4Zi_fdZtfqWd0pyGkscvOfsrGgS9AuCr9WhJLLtosNL7-OtAkCUA?key=W2xKHEZUw2tbSB0Cqnh7hQ)![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXf0T7mclfaOexHA5BHXCjzUOru33tLX7l9Sd1yEye0A5sBkHkQyXJJDbhqBqWqb3roYW_8teQJWNm5unoa7lR4tWjdf7EmLoKaWSTgiR3LHtQ8YhYE_IfSqn-jbeyccHk7xaeFF_Q?key=W2xKHEZUw2tbSB0Cqnh7hQ)
 
 Powershell script can be used tmp1511.tmp
-
+```
 #
 
 \# Windows PowerShell script for AD DS Deployment
@@ -133,6 +133,7 @@ Install-ADDSForest \`
 \-SysvolPath "C:\\Windows\\SYSVOL" \`
 
 \-Force:$true
+```
 
 Create an OU= Montreal
 
@@ -151,8 +152,9 @@ Right Click -> New -> Group
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXe6mExgwLTiacbcbHxLmdVWTOJm8ZfMAnjd68tTFK9tEWh3Q674yAX_tpHUh3dJUORcw34fqC7de8isoazWBHICg1h8kAUtJ1ECzaxdvKZm71x7CNuz3tIF4qdF6I_iU0Bjhw_DhA?key=W2xKHEZUw2tbSB0Cqnh7hQ)
 
 Using Powershell
-
+```
 New-ADGroup -Name "PMG" -path "OU=Montreal,DC=antriksh,DC=ca" -GroupCategory Security -GroupScope Global
+```
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeX6LgydtJSwi53pTdUnyKPDAqZV-nR5A0ITQsa12znKB5fFgrI6c5UG1q2jK782X_r4jPhBkplcgWqVDoUcDJzSWzLmQQknzqcmXwT8PMkiuIJ6UyhBOOj4rtJVY24xn3eqsWX?key=W2xKHEZUw2tbSB0Cqnh7hQ)
 
@@ -162,11 +164,12 @@ Create 4 Users \[AMSTD1,AMSTD2,PMSTD1,PMSTD2\]
 
 Using Powershell
 
+```
 New-ADUser -name "AMSTD2" -GivenName "AMSTD" -Surname "AMSTD2" -DisplayName "AMSTD2" -SamAccountName "AMSTD" -UserPrincipalName "AMSTD2@antriksh.ca" -path "OU=Montreal,DC=antriksh,DC=ca" -PasswordNeverExpires $true -AccountPassword (Read-Host -AsSecureString "Please input the password") -Enabled $true
-
-New-ADUser -name “AMSTD2” -GivenName “AMSTD” -Surname “AMSTD2” -DisplayName “AMSTD2” -SamAccountName “AMSTD” -UserPrincipalName “AMSTD2@antriksh.ca” -path “OU=Montreal,DC=antriksh,DC=ca” -PasswordNeverExpires $true -AccountPassword (Read-Host -AsSecureString “Please input the password”) -Enabled $true
-
+```
+```
 Get-ADUser -Filter \* -SearchBase "OU=Montreal,DC=antriksh,DC=ca"
+```
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXe1m9lz604MPzN3viXDoRgtDPMdpODOn_c6J2C6Y5cwScEd-2Sg6zFc1hpFZOvXDt0oHEebsgTxd--PpQE1E42K6tczxV9kKL_lX0IeNRsYfQh6CRXuMuK2GqPBAFXXLnnYjki3sQ?key=W2xKHEZUw2tbSB0Cqnh7hQ)![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdhJrk-47MHQVcYfRB6PfprsS7Pk10JmVjI-w4LWLuvqx_BS5yb-7babrLHIp344BRhrPYiMZmRzLwXHOmHlCY7Z4LR1A84hNc8eTAwEp3FFTGEf-cYHD6WSqX6YU1lmUzzdpdLMQ?key=W2xKHEZUw2tbSB0Cqnh7hQ)![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXc92WY-gWEXInOXWFrQlz6J2UV3HZwVdiVeSdfN2UjOQAwjk1n0YLeKVyDlVv-PZe2O27ml7yfyaYZRtgGh9Tyn4UjghvllJR8NSNGMtvwE7NqLEj0ANuFy1fGVrLRpIwLoi5UR?key=W2xKHEZUw2tbSB0Cqnh7hQ)
 
